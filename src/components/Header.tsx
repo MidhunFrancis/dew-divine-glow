@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -49,9 +50,13 @@ export const Header = () => {
               className="flex items-center"
             >
               <a href="#home" className="flex items-center gap-3">
-                <span className="text-2xl md:text-3xl font-serif font-bold text-primary">
-                  🌸 Dew & Divine
-                </span>
+                <img 
+                  src={logo} 
+                  alt="Dew & Divine Logo" 
+                  className={`h-14 md:h-16 w-auto transition-all duration-300 ${
+                    isScrolled ? "" : "brightness-0 invert"
+                  }`}
+                />
               </a>
             </motion.div>
 

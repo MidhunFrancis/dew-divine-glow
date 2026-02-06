@@ -1,4 +1,5 @@
 import { Instagram, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const quickLinks = [
   { href: "#home", label: "Home" },
@@ -22,9 +23,11 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
           {/* Left - Brand */}
           <div>
-            <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-              🌸 Dew & Divine
-            </h3>
+            <img 
+              src={logo} 
+              alt="Dew & Divine Logo" 
+              className="h-20 md:h-24 w-auto mb-4 brightness-0 invert"
+            />
             <p className="text-primary-foreground/80 max-w-sm">
               Glow at Home – Luxury Salon & Spa Services
             </p>
