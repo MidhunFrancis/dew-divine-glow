@@ -2,95 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/500.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/lato/300.css";
+@import "@fontsource/lato/400.css";
+@import "@fontsource/lato/700.css";
+
+/* Dew & Divine Design System
+   Brand: Luxury Salon & Spa
+   Primary Color: #834333 (Terracotta)
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Warm cream background */
+    --background: 30 43% 97%;
+    --foreground: 12 35% 25%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Cards with slight warmth */
+    --card: 30 40% 99%;
+    --card-foreground: 12 35% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 30 40% 99%;
+    --popover-foreground: 12 35% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Terracotta #834333 */
+    --primary: 12 38% 36%;
+    --primary-foreground: 30 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Warm blush */
+    --secondary: 25 35% 92%;
+    --secondary-foreground: 12 35% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted: Soft warm gray */
+    --muted: 25 20% 93%;
+    --muted-foreground: 12 15% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Rose gold hint */
+    --accent: 15 30% 88%;
+    --accent-foreground: 12 35% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 25 25% 88%;
+    --input: 25 25% 88%;
+    --ring: 12 38% 36%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom brand tokens */
+    --cream: 30 43% 97%;
+    --cream-dark: 25 35% 92%;
+    --terracotta: 12 38% 36%;
+    --terracotta-light: 12 38% 45%;
+    --terracotta-dark: 12 38% 28%;
+    --rose: 350 30% 85%;
+    --gold: 38 60% 65%;
+    --warm-white: 30 40% 99%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(12 38% 36% / 0.9), hsl(12 38% 28% / 0.95));
+    --gradient-card: linear-gradient(180deg, hsl(30 40% 99%), hsl(25 35% 96%));
+    --gradient-overlay: linear-gradient(to bottom, transparent 0%, hsl(12 38% 20% / 0.7) 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(12 38% 36% / 0.08);
+    --shadow-medium: 0 8px 30px hsl(12 38% 36% / 0.12);
+    --shadow-hover: 0 12px 40px hsl(12 38% 36% / 0.15);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 30 43% 97%;
+    --sidebar-foreground: 12 35% 25%;
+    --sidebar-primary: 12 38% 36%;
+    --sidebar-primary-foreground: 30 40% 98%;
+    --sidebar-accent: 25 35% 92%;
+    --sidebar-accent-foreground: 12 35% 25%;
+    --sidebar-border: 25 25% 88%;
+    --sidebar-ring: 12 38% 36%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 12 30% 10%;
+    --foreground: 30 30% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 12 25% 14%;
+    --card-foreground: 30 30% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 12 25% 14%;
+    --popover-foreground: 30 30% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 15 35% 60%;
+    --primary-foreground: 12 30% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 12 20% 20%;
+    --secondary-foreground: 30 30% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 12 20% 18%;
+    --muted-foreground: 25 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 12 25% 22%;
+    --accent-foreground: 30 30% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 12 20% 22%;
+    --input: 12 20% 22%;
+    --ring: 15 35% 60%;
+
+    --sidebar-background: 12 30% 10%;
+    --sidebar-foreground: 30 30% 95%;
+    --sidebar-primary: 15 35% 60%;
+    --sidebar-primary-foreground: 12 30% 10%;
+    --sidebar-accent: 12 25% 18%;
+    --sidebar-accent-foreground: 30 30% 95%;
+    --sidebar-border: 12 20% 22%;
+    --sidebar-ring: 15 35% 60%;
   }
 }
 
@@ -99,7 +128,147 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* Hero slider Ken Burns animation */
+  @keyframes kenburns {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-kenburns {
+    animation: kenburns 8s ease-out forwards;
+  }
+
+  /* Fade up animation for scroll reveals */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  /* Staggered delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  /* Smooth hover lift */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Underline animation for links */
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left scale-x-0 transition-transform duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100;
+  }
+
+  /* Header transparent to solid */
+  .header-transparent {
+    @apply bg-transparent;
+  }
+
+  .header-solid {
+    background-color: hsl(var(--cream-dark));
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Gallery hover zoom */
+  .gallery-item {
+    @apply overflow-hidden;
+  }
+
+  .gallery-item img {
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.08);
+  }
+
+  /* Service card styling */
+  .service-card {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-soft);
+    @apply transition-all duration-300;
+  }
+
+  .service-card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+
+  .bg-cream-dark {
+    background-color: hsl(var(--cream-dark));
+  }
+
+  .text-terracotta {
+    color: hsl(var(--terracotta));
+  }
+
+  .bg-terracotta {
+    background-color: hsl(var(--terracotta));
+  }
+
+  .border-terracotta {
+    border-color: hsl(var(--terracotta));
   }
 }
